@@ -5,7 +5,7 @@ export function shortCourse(name: string): string {
   return name.split(' - ')[0].slice(0, 20);
 }
 
-function startOfDay(d: Date) {
+export function startOfDay(d: Date) {
   const x = new Date(d);
   x.setHours(0, 0, 0, 0);
   return x;
@@ -30,4 +30,15 @@ export function relative(due: Date, now = new Date()): string | null {
   if (mins < 0 || mins >= 24 * 60) return null;
   if (mins < 60) return `in ${mins}m`;
   return `in ${Math.round(mins / 60)}h`;
+}
+
+export function startOfWeek(d: Date): Date {
+  const x = startOfDay(d);
+  const dow = (x.getDay() + 6) % 7; // Monday = 0
+  x.setDate(x.getDate() - dow);
+  return x;
+}
+
+export function sameDay(a: Date, b: Date): boolean {
+  return startOfDay(a).getTime() === startOfDay(b).getTime();
 }
