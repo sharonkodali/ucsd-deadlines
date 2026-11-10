@@ -1,5 +1,7 @@
 # UCSD Deadlines
 
+[![ci](https://github.com/sharonkodali/ucsd-deadlines/actions/workflows/ci.yml/badge.svg)](https://github.com/sharonkodali/ucsd-deadlines/actions/workflows/ci.yml)
+
 A browser extension that pulls your upcoming UCSD Canvas assignments into one popup, so you can see what's due today, what's late, and what's coming this week without clicking through every course.
 
 ## How it works
